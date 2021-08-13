@@ -4,9 +4,15 @@ namespace App\Http\Controllers;
 
 use App\Models\Car;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;    
 
 class CarController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth:api');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +20,7 @@ class CarController extends Controller
      */
     public function index()
     {
-        //
+        return Auth::user()->cars->toJson();
     }
 
     /**
@@ -25,7 +31,13 @@ class CarController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Car::create([
+            'name' =>$request->name,
+            'marca' =>$request->marca,
+            'valor' =>$request->valor,
+            'user_id' =>Auth::user()->id
+            
+        ]);
     }
 
     /**
@@ -36,7 +48,10 @@ class CarController extends Controller
      */
     public function show(Car $car)
     {
-        //
+        if($car->user->id != Auth::user()->id) {
+            return response('', 403);
+        }
+        return $car->toJson();
     }
 
     /**
@@ -48,7 +63,13 @@ class CarController extends Controller
      */
     public function update(Request $request, Car $car)
     {
-        //
+        if($car->user->id != Auth::user()->id) {
+            return response('', 403);
+        }
+        $car->name= $$request->name;
+        $car->marca= $$request->marca;
+        $car->valor= $$request->valor;
+        $car->save();
     }
 
     /**
@@ -59,6 +80,9 @@ class CarController extends Controller
      */
     public function destroy(Car $car)
     {
-        //
+        if($car->user->id != Auth::user()->id) {
+            return response('', 403);
+        }
+        $$car->delete();
     }
 }
