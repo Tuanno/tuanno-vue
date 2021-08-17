@@ -31,7 +31,7 @@ class CarController extends Controller
      */
     public function store(Request $request)
     {
-        Car::create([
+        return Car::create([
             'name' =>$request->name,
             'marca' =>$request->marca,
             'valor' =>$request->valor,
