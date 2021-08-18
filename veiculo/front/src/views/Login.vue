@@ -13,13 +13,13 @@
 export default {
   data () {
     return {
-      email: '',
-      pw: ''
+      email: 'user0@gmail.com',
+      pw: 'password'
     }
   },
   methods: {
     login () {
-
+      this.$store.dispatch('login', [this.email, this.pw]) 
     }
   }   
 }     
