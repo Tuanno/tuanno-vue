@@ -18,8 +18,11 @@ export default {
     }
   },
   methods: {
-    login () {
-      this.$store.dispatch('login', [this.email, this.pw]) 
+    async login () {
+      const logged = await this.$store.dispatch('login', [this.email, this.pw])
+      if (logged) {
+        this.$router.push('/')
+      } 
     }
   }   
 }     
