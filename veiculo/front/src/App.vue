@@ -2,7 +2,7 @@
   <div id="nav">
     <router-link to="/">Home</router-link> |
     <dir v-if="!isLogged">
-      <router-link to="/login">Login</router-link>|
+      <router-link to="/login">Login</router-link> |
       <router-link to="/register">Register</router-link>
     </dir>
     <div v-else>

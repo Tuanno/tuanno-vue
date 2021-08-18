@@ -38,6 +38,13 @@ export default createStore({
       commit('setToken', '')
       commit('setCars', [])
     },
+    async register ({ commit }, data) {
+      try {
+        const response = await axios.post('http://localhost:8000/api/register', data)
+      } catch (ex) {
+        return false
+      }
+    },
     async loadToken ({ commit }) {
       const token = localStorage.getItem('token')
       if (token) {
