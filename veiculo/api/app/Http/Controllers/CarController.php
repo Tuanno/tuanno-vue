@@ -80,9 +80,9 @@ class CarController extends Controller
      */
     public function destroy(Car $car)
     {
-        if($car->user->id != Auth::user()->id) {
+        if($car->user_id != Auth::user()->id) {
             return response('', 403);
         }
-        $$car->delete();
+        $car->delete();
     }
 }

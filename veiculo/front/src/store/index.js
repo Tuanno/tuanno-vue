@@ -18,6 +18,9 @@ export default createStore({
     },
     setCars (state, cars) {
       state.cars = cars
+    },
+    newVeiculo (state, newCar) {
+      state.cars.push('newCar')
     }
   },
   actions: {
@@ -56,7 +59,21 @@ export default createStore({
         headers: { Authorization: `Bearer ${state.token}` } 
       })
       commit('setCars', response.data)
-    }
+    },
+
+    async criarVeiculo ({ state, commit }, carData) {
+      const response = await axios.post('http://localhost:8000/api/Car', carData, {
+        headers: { Authorization: `Bearer ${state.token}` }
+      }) 
+      commit('newVeiculo', response.data)
+    },
+
+    async apagarCar ({ state, commit }, id) {
+      const response = await axios.delete(`http://localhost:8000/api/Car/${id}`, {
+        headers: { Authorization: `Bearer ${state.token}` } 
+      })
+    } 
+
   },
   modules: {
   }

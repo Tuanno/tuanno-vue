@@ -1,8 +1,18 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
-    {{cars}}
+    <table>
+      <tr>
+        <th>Nome do Veiculo</th>
+        <th>Marca</th>
+        <th>Valor</th>
+      </tr>
+      <tr v-for="car in cars" :key="car.id">
+        <td>{{car.name}}</td>
+        <td>{{car.marca}}</td>
+        <td>{{car.valor}}</td>
+        <button @click="editarCar(car.id)">Editar</button><button @click="apagarCar(car.id)">Apagar</button>
+      </tr>
+    </table> 
   </div>
 </template>
 
@@ -24,6 +34,15 @@ export default {
   },
   components: {
     // HelloWorld
+  },
+  methods: {
+    editarCar (id) {
+      this.$store.dispatch('editarCar', id)
+    },
+
+    apagarCar (id) {
+      this.$store.dispatch('apagarCar', id)
+    }
   }
 }
 </script>

@@ -7,15 +7,15 @@
                 <label>
                     Nome:
                 </label>
-                <input type="text" class="form-control w-25 p-2 mx-auto" placeholder="ex: Fiate Uno"
-                 name="name" required v-model="name">
+                <input type="text" class="form-control w-25 p-2 mx-auto" 
+                placeholder="ex: Fiate Uno" name="name" required v-model="name">
             </div>
             <div>
                 <label>
                     Marca:
                 </label>
-                <input type="text" class="form-control w-25 p-2 mx-auto" placeholder="ex: Jeep" name="marca"
-                 required v-model="marca">
+                <input type="text" class="form-control w-25 p-2 mx-auto" 
+                placeholder="ex: Jeep" name="marca" required v-model="marca">
             </div>
         </div>
         <div>
@@ -23,8 +23,8 @@
                 <label>
                     Valor:
                 </label>
-                <input type="number" class="form-control w-25 p-2 mx-auto" placeholder="12.000" name="valor"
-                 required v-model="valor"><br>
+                <input type="number" class="form-control w-25 p-2 mx-auto" 
+                placeholder="ex: 12.000" name="valor" required v-model="valor"><br>
             </div>
         </div>
         <div v-if="veiculo == undefined" class="mx-auto">
