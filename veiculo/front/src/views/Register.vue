@@ -1,11 +1,12 @@
 <template>
-        <form class="" @submit.prevent="cadastrar">
+        <form class="form-group" @submit.prevent="cadastrar">
             <div>
                 <div>
+                    <h2>Cadastrar Usuário</h2>
                     <label>
                         Nome:
                     </label>
-                    <input type="text" placeholder="Digite o seu nome" name="nome" v-model="name">
+                    <input type="text" class="form-control w-25 p-2 mx-auto" placeholder="Digite o seu nome" name="nome" v-model="name">
                 </div>
             </div>
 
@@ -14,16 +15,18 @@
                     <label>
                         E-mail:
                     </label>
-                    <input type="text" placeholder="ex: user@email.com" name="email" v-model="email">
+                    <input type="text" class="form-control w-25 p-2 mx-auto" 
+                    placeholder="ex: user@email.com" name="email" v-model="email">
                 </div>
             </div>
 
             <div>
                 <div>
-                    <label>
+                    <label class="font-size 16px">
                         Senha:
                     </label>
-                    <input type="password" placeholder="********" name="senha" v-model="password">
+                    <input type="password" class="form-control w-25 p-2 mx-auto" 
+                    placeholder="********" name="senha" v-model="password">
                 </div>
             </div>
 
@@ -32,10 +35,11 @@
                     <label>
                         Confirme Senha:
                     </label>
-                    <input type="password" placeholder="********" name="confirma" v-model="password_confirmation">
+                    <input type="password" class="form-control w-25 p-2 mx-auto" 
+                    placeholder="********" name="confirma" v-model="password_confirmation"><br>
                 </div>
                 
-                <button>
+                <button class="btn btn-outline-success">
                     Cadastrar
                 </button>
             </div>

@@ -3,6 +3,7 @@ import Home from '../views/Home.vue'
 import Login from '../views/Login.vue'
 import Register from '../views/Register.vue'
 import Logout from '../views/Logout.vue'
+import CadastrarVeiculos from '../views/CadastrarVeiculos.vue'
 
 const routes = [
   {
@@ -32,6 +33,11 @@ const routes = [
     path: '/logout',
     name: 'logout',
     component: Logout
+  },
+  {
+    path: '/cadastrarVeiculos',
+    name: 'CadastrarVeiculos',
+    component: CadastrarVeiculos 
   }
 ]
 
