@@ -1,16 +1,17 @@
 <template>
-  <div class="home">
+  <div class="home table table-responsive table-dark p-4">
     <table>
       <tr>
-        <th>Nome do Veiculo</th>
-        <th>Marca</th>
-        <th>Valor</th>
+        <th scope="row">Nome do Veiculo</th>
+        <th scope="row">Marca</th>
+        <th scope="row">Valor</th>
       </tr>
       <tr v-for="car in cars" :key="car.id">
         <td>{{car.name}}</td>
         <td>{{car.marca}}</td>
         <td>{{car.valor}}</td>
-        <button @click="editarCar(car.id)">Editar</button><button @click="apagarCar(car.id)">Apagar</button>
+        <button class="btn btn-light" @click="editarCar(car.id)">Editar</button>
+        <button class="btn btn-light" @click="apagarCar(car.id)">Apagar</button>
       </tr>
     </table> 
   </div>

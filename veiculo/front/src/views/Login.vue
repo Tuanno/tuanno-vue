@@ -1,6 +1,6 @@
 <template>
     <div class="form-group">
-        <h2>Entrar</h2>
+        <h2 class="p-4">Entrar</h2>
         <form for="exampleInputEmail1" v-on:submit.prevent="login">
           <label>Email:</label>
             <input type="text" class="form-control w-25 p-2 mx-auto" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="ex: user@gmail.com" v-model="email">

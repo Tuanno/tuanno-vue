@@ -1,8 +1,9 @@
 <template>
-  <div id="nav">
+  <div id="nav" class="navbar navbar-expand-lg navbar-light bg-light
+   p-3 nav justify-content-center">
     <router-link to="/">Home</router-link> |
     <dir v-if="!isLogged">
-      <router-link to="/login">Login</router-link> |
+      <router-link class="color:red" to="/login">Login</router-link> |
       <router-link to="/register">Register</router-link> |
       <router-link to="/CadastrarVeiculos">Cadastro</router-link>
     </dir>

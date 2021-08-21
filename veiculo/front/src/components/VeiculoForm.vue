@@ -3,7 +3,7 @@
         <div class="flex flex-wrap -mx-3 mb-4">
 
             <div>
-                <h2>Cadastro de veiculo</h2>
+                <h2 class="p-4">Cadastro de veiculo</h2>
                 <label>
                     Nome:
                 </label>

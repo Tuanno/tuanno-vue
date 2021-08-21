@@ -2,7 +2,7 @@
         <form class="form-group" @submit.prevent="cadastrar">
             <div>
                 <div>
-                    <h2>Cadastrar Usuário</h2>
+                    <h2 class="p-4">Cadastrar Usuário</h2>
                     <label>
                         Nome:
                     </label>
